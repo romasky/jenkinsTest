@@ -8,7 +8,7 @@ import org.openqa.selenium.UsernameAndPassword;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import readProperties.ConfigProvider;
+
 
 public class mainPage extends baseSeleniumPage { //extends для того чтобы работал вебдрайвер
 
@@ -62,7 +62,7 @@ public class mainPage extends baseSeleniumPage { //extends для того чт�
 
 
     public mainPage() {
-        driver.get(ConfigProvider.URL);
+        driver.get("https://the-internet.herokuapp.com");
         PageFactory.initElements(driver, this);
         //PageFactory в Selenium упрощает и автоматизирует инициализацию элементов страницы
         // и обеспечивает удобное взаимодействие с ними в тестовых сценариях.
@@ -76,109 +76,109 @@ public class mainPage extends baseSeleniumPage { //extends для того чт�
         return new abTestPage();
     }
 
-
-    /*необходимо открыть страницу addRemovePage*/
-    public addRemovePage openaddRemovePage(){
-        addRemovePage.click();
-        logger.info("Add/Remove Elements page is open");
-        return new addRemovePage();
-    }
-
-
-    /*необходимо открыть страницу openbasicAuthPage*/
-    public basicAuthPage openbasicAuthPage(){
-        HasAuthentication authentication = (HasAuthentication) driver;
-        authentication.register(()->new UsernameAndPassword(ConfigProvider.USER_LOGIN,ConfigProvider.USER_PASS));
-        driver.get(ConfigProvider.URL+ConfigProvider.BASIC_AUTH);
-        logger.info("Basic Auth page is open");
-        return new basicAuthPage();
-    }
-
-
-    /*необходимо открыть страницу BrokenImagesPage*/
-    public brokenImagesPage openBrokenImagesPage(){
-        brokenImages.click();
-        logger.info("Broken Images page is open");
-        return new brokenImagesPage();
-    }
-
-
-    /*необходимо открыть страницу ChallengingDOMPage*/
-    public challengingDOMPage openChallengingDOMPage(){
-        challengingDOMPage.click();
-        logger.info("Challenging DOM page is open");
-        return new challengingDOMPage();
-    }
-
-
-    /*необходимо открыть страницу CheckboxesPage*/
-    public checkboxesPage openCheckboxesPage(){
-        CheckboxesPage.click();
-        logger.info("Checkboxes page is open");
-        return new checkboxesPage();
-    }
-
-
-    /*необходимо открыть страницу ContextMenuPage*/
-    public contextMenuPage openContextMenuPage(){
-        contextMenuPage.click();
-        logger.info("Context Menu page is open");
-        return new contextMenuPage();
-    }
-
-
-    /*необходимо открыть страницу ContextMenuPage*/
-    public digestAuthenticationPage digestAuthenticationPage(){
-        HasAuthentication authentication = (HasAuthentication) driver;
-        authentication.register(()->new UsernameAndPassword(ConfigProvider.USER_LOGIN,ConfigProvider.USER_PASS));
-        driver.get(ConfigProvider.URL+ConfigProvider.DIGEST_AUTH);
-        logger.info("Digest Authentication page is open");
-        return new digestAuthenticationPage();
-    }
-
-
-    /*необходимо открыть страницу disappearingElementsPage*/
-    public disappearingElementsPage opendisappearingElementsPage(){
-        disappearingElementsPage.click();
-        logger.info("Disappearing Elements page is open");
-        return new disappearingElementsPage();
-    }
-
-
-    /*необходимо открыть страницу dragAndDropPage*/
-    public dragAndDropPage opendragAndDropPage(){
-        dragAndDropPage.click();
-        logger.info("Drag and Drop page is open");
-        return new dragAndDropPage();
-    }
-
-
-    /*необходимо открыть страницу dropdownPage*/
-    public dropdownPage opendropdownPage(){
-        dropdownPage.click();
-        logger.info("Dropdown page is open");
-        return new dropdownPage();
-    }
-
-
-    /*необходимо открыть страницу dropdownPage*/
-    public dynamicContentPage opendynamicContentPage(){
-        dynamicContentPage.click();
-        logger.info("Dynamic Content page is open");
-        return new dynamicContentPage();
-    }
-
-
-
-
-
-
-    //необходимо открыть страницу javaScriptAlertsPage
-    public javaScriptAlertsPage openJSAlertsPage(){
-        jsAlertsPage.click();
-        logger.info("JavaScript Alerts page is open");
-        return new javaScriptAlertsPage();
-    }
+//
+//    /*необходимо открыть страницу addRemovePage*/
+//    public addRemovePage openaddRemovePage(){
+//        addRemovePage.click();
+//        logger.info("Add/Remove Elements page is open");
+//        return new addRemovePage();
+//    }
+//
+//
+//    /*необходимо открыть страницу openbasicAuthPage*/
+//    public basicAuthPage openbasicAuthPage(){
+//        HasAuthentication authentication = (HasAuthentication) driver;
+//        authentication.register(()->new UsernameAndPassword(ConfigProvider.USER_LOGIN,ConfigProvider.USER_PASS));
+//        driver.get(ConfigProvider.URL+ConfigProvider.BASIC_AUTH);
+//        logger.info("Basic Auth page is open");
+//        return new basicAuthPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу BrokenImagesPage*/
+//    public brokenImagesPage openBrokenImagesPage(){
+//        brokenImages.click();
+//        logger.info("Broken Images page is open");
+//        return new brokenImagesPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу ChallengingDOMPage*/
+//    public challengingDOMPage openChallengingDOMPage(){
+//        challengingDOMPage.click();
+//        logger.info("Challenging DOM page is open");
+//        return new challengingDOMPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу CheckboxesPage*/
+//    public checkboxesPage openCheckboxesPage(){
+//        CheckboxesPage.click();
+//        logger.info("Checkboxes page is open");
+//        return new checkboxesPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу ContextMenuPage*/
+//    public contextMenuPage openContextMenuPage(){
+//        contextMenuPage.click();
+//        logger.info("Context Menu page is open");
+//        return new contextMenuPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу ContextMenuPage*/
+//    public digestAuthenticationPage digestAuthenticationPage(){
+//        HasAuthentication authentication = (HasAuthentication) driver;
+//        authentication.register(()->new UsernameAndPassword(ConfigProvider.USER_LOGIN,ConfigProvider.USER_PASS));
+//        driver.get(ConfigProvider.URL+ConfigProvider.DIGEST_AUTH);
+//        logger.info("Digest Authentication page is open");
+//        return new digestAuthenticationPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу disappearingElementsPage*/
+//    public disappearingElementsPage opendisappearingElementsPage(){
+//        disappearingElementsPage.click();
+//        logger.info("Disappearing Elements page is open");
+//        return new disappearingElementsPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу dragAndDropPage*/
+//    public dragAndDropPage opendragAndDropPage(){
+//        dragAndDropPage.click();
+//        logger.info("Drag and Drop page is open");
+//        return new dragAndDropPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу dropdownPage*/
+//    public dropdownPage opendropdownPage(){
+//        dropdownPage.click();
+//        logger.info("Dropdown page is open");
+//        return new dropdownPage();
+//    }
+//
+//
+//    /*необходимо открыть страницу dropdownPage*/
+//    public dynamicContentPage opendynamicContentPage(){
+//        dynamicContentPage.click();
+//        logger.info("Dynamic Content page is open");
+//        return new dynamicContentPage();
+//    }
+//
+//
+//
+//
+//
+//
+//    //необходимо открыть страницу javaScriptAlertsPage
+//    public javaScriptAlertsPage openJSAlertsPage(){
+//        jsAlertsPage.click();
+//        logger.info("JavaScript Alerts page is open");
+//        return new javaScriptAlertsPage();
+//    }
 
 
 }

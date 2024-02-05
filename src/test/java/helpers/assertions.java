@@ -13,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.addRemovePage;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -24,10 +23,10 @@ public class assertions {
 
     private static final Logger logger = LogManager.getLogger(assertions.class);
 
-    public static void checkAlertAppears() {
-        Assertions.assertNotNull(alertHelpers.alert, "Failed to open the alert");
-        logger.info("Alert is appears");
-    }
+//    public static void checkAlertAppears() {
+//        Assertions.assertNotNull(alertHelpers.alert, "Failed to open the alert");
+//        logger.info("Alert is appears");
+//    }
 
     public static void checkAlertText(String expectedValue, String actualValue) {
         Assertions.assertEquals(expectedValue, actualValue, "Alert text is not equal to expectedValue " + expectedValue);
@@ -56,16 +55,16 @@ public class assertions {
             Assertions.fail("Text value is not equal to expectedValue " + expectedValue1 + " or " + expectedValue2);
         }
     }
-
-    public static void deleteButtonAppearsNTimes(addRemovePage addRemovePage) {
-        Assertions.assertEquals(addRemovePage.countDeleteButtons(), addRemovePage.n);
-        logger.info("Delete button appeared "+addRemovePage.n+" times");
-    }
-
-    public static void zeroListSize(addRemovePage addRemovePage) {
-        Assertions.assertEquals(0, addRemovePage.countDeleteButtons());
-        logger.info("Delete button appeared and closed "+addRemovePage.n+" times");
-    }
+//
+//    public static void deleteButtonAppearsNTimes(addRemovePage addRemovePage) {
+//        Assertions.assertEquals(addRemovePage.countDeleteButtons(), addRemovePage.n);
+//        logger.info("Delete button appeared "+addRemovePage.n+" times");
+//    }
+//
+//    public static void zeroListSize(addRemovePage addRemovePage) {
+//        Assertions.assertEquals(0, addRemovePage.countDeleteButtons());
+//        logger.info("Delete button appeared and closed "+addRemovePage.n+" times");
+//    }
 
     public static void checkImageLinks(List<WebElement> imagesLinks) throws IOException {
 
