@@ -3,12 +3,17 @@ package pages;
 import core.baseSeleniumPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.HasAuthentication;
 import org.openqa.selenium.UsernameAndPassword;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import readProperties.ConfigProvider;
+
+import java.time.Duration;
 
 
 public class mainPage extends baseSeleniumPage { //extends для того чтобы работал вебдрайвер
@@ -70,8 +75,9 @@ public class mainPage extends baseSeleniumPage { //extends для того чт�
 //    }
 
     public mainPage() {
-        System.out.println("URL from ConfigProvider: " + ConfigProvider.URL);
 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Ожидание в течение 10 секунд
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("body"))); // Ожидание видимости элемента
         driver.get(ConfigProvider.URL);
         PageFactory.initElements(driver, this);
         //PageFactory в Selenium упрощает и автоматизирует инициализацию элементов страницы
