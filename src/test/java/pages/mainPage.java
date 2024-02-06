@@ -77,7 +77,7 @@ public class mainPage extends baseSeleniumPage { //extends для того чт�
     public mainPage() {
 
 
-        driver.get("https://the-internet.herokuapp.com");
+        driver.get(ConfigProvider.URL);
         PageFactory.initElements(driver, this);
         //PageFactory в Selenium упрощает и автоматизирует инициализацию элементов страницы
         // и обеспечивает удобное взаимодействие с ними в тестовых сценариях.
