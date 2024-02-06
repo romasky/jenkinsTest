@@ -22,6 +22,7 @@ abstract public class baseSeleniumTest {
 
     @BeforeEach
     public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "/Users/roman/.cache/selenium/chromedriver/mac-arm64/121.0.6167.85");
         WebDriverManager.chromedriver().setup();
 
         ChromeDriverService service=new ChromeDriverService.Builder().withLogOutput(System.out).build();
