@@ -10,7 +10,7 @@ public class PropertiesTest extends baseTestSelenide {
 
     @Test
     public void readProperties() throws IOException {
-        System.getProperties().load(ClassLoader.getSystemResourceAsStream("application.properties"));
+        System.getProperties().load(ClassLoader.getSystemResourceAsStream("application.conf"));
         String urlFromProperty = System.getProperty("url");
         System.out.println(urlFromProperty);
     }
