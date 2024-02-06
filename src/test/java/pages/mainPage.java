@@ -8,6 +8,7 @@ import org.openqa.selenium.UsernameAndPassword;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import readProperties.ConfigProvider;
 
 
 public class mainPage extends baseSeleniumPage { //extends для того чтобы работал вебдрайвер
@@ -61,8 +62,17 @@ public class mainPage extends baseSeleniumPage { //extends для того чт�
     private WebElement jsAlertsPage;
 
 
+//    public mainPage() {
+//        driver.get("https://the-internet.herokuapp.com");
+//        PageFactory.initElements(driver, this);
+//        //PageFactory в Selenium упрощает и автоматизирует инициализацию элементов страницы
+//        // и обеспечивает удобное взаимодействие с ними в тестовых сценариях.
+//    }
+
     public mainPage() {
-        driver.get("https://the-internet.herokuapp.com");
+        System.out.println("URL from ConfigProvider: " + ConfigProvider.URL);
+
+        driver.get(ConfigProvider.URL);
         PageFactory.initElements(driver, this);
         //PageFactory в Selenium упрощает и автоматизирует инициализацию элементов страницы
         // и обеспечивает удобное взаимодействие с ними в тестовых сценариях.
