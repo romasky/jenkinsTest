@@ -76,8 +76,7 @@ public class mainPage extends baseSeleniumPage { //extends для того чт�
 
     public mainPage() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Ожидание в течение 10 секунд
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("body"))); // Ожидание видимости элемента
+
         driver.get(ConfigProvider.URL);
         PageFactory.initElements(driver, this);
         //PageFactory в Selenium упрощает и автоматизирует инициализацию элементов страницы
