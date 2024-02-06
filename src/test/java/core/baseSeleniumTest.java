@@ -38,16 +38,16 @@ abstract public class baseSeleniumTest {
     }
 
 
-//    @AfterEach
-//    public void tearDown() {
-//
-//
-//        if (driver != null) {
-//            //driver.close(); //Если вы хотите закрыть текущее окно браузера, но оставить сессию WebDriver активной (например, если вам нужно открыть новое окно или выполнить другие действия), то просто используйте метод close() без вызова quit()
-//            driver.quit(); //Если вы хотите закрыть все окна браузера и завершить сеанс WebDriver, используйте только метод quit()
-//        }
-//
-//        logger.info("Driver is quit");
-//    }
+    @AfterEach
+    public void tearDown() {
+
+
+        if (driver != null) {
+            //driver.close(); //Если вы хотите закрыть текущее окно браузера, но оставить сессию WebDriver активной (например, если вам нужно открыть новое окно или выполнить другие действия), то просто используйте метод close() без вызова quit()
+            driver.quit(); //Если вы хотите закрыть все окна браузера и завершить сеанс WebDriver, используйте только метод quit()
+        }
+
+        logger.info("Driver is quit");
+    }
 
 }
