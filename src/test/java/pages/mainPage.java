@@ -78,6 +78,7 @@ public class mainPage extends baseSeleniumPage implements ConfigProvider { //ext
         }
         catch (InvalidArgumentException e) {
             System.out.println("Caught InvalidArgumentException: " + e.getMessage());
+            System.out.println(ConfigProvider.URL);
         }
 
         PageFactory.initElements(driver, this);
