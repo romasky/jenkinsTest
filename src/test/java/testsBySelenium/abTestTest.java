@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import pages.abTestPage;
 import pages.mainPage;
 
+import java.io.IOException;
+
 public class abTestTest extends baseSeleniumTest {
 
 
@@ -37,7 +39,7 @@ public class abTestTest extends baseSeleniumTest {
     @DisplayName("Test positive text body on the page")
     @Severity(SeverityLevel.MINOR)
     @Test
-    public void testPositiveAbCheckBodyText() {
+    public void testPositiveAbCheckBodyText()  {
         abTestPage abTestPage = new mainPage()
                 .openAbTestPage();
 
