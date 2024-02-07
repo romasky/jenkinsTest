@@ -3,10 +3,7 @@ package pages;
 import core.baseSeleniumPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.HasAuthentication;
-import org.openqa.selenium.UsernameAndPassword;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,7 +13,7 @@ import readProperties.ConfigProvider;
 import java.time.Duration;
 
 
-public class mainPage extends baseSeleniumPage { //extends для того чтобы работал вебдрайвер
+public class mainPage extends baseSeleniumPage implements ConfigProvider { //extends для того чтобы работал вебдрайвер
 
     private final Logger logger = LogManager.getLogger(mainPage.class);
 
@@ -76,8 +73,13 @@ public class mainPage extends baseSeleniumPage { //extends для того чт�
 
     public mainPage() {
 
+        try {
+            driver.get(ConfigProvider.URL);
+        }
+        catch (InvalidArgumentException e) {
+            System.out.println("Caught InvalidArgumentException: " + e.getMessage());
+        }
 
-        driver.get(ConfigProvider.URL);
         PageFactory.initElements(driver, this);
         //PageFactory в Selenium упрощает и автоматизирует инициализацию элементов страницы
         // и обеспечивает удобное взаимодействие с ними в тестовых сценариях.
