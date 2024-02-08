@@ -74,11 +74,12 @@ public class mainPage extends baseSeleniumPage implements ConfigProvider { //ext
     public mainPage() {
 
         try {
+            System.out.println("Existing URL before get! is: "+ ConfigProvider.URL);
             driver.get(ConfigProvider.URL);
         }
         catch (InvalidArgumentException e) {
-            System.out.println("Caught InvalidArgumentException: " + e.getMessage());
-            System.out.println("Existing URL is: "+ ConfigProvider.URL);
+
+            System.out.println("Existing URL after get! is: "+ ConfigProvider.URL);
         }
 
         PageFactory.initElements(driver, this);
