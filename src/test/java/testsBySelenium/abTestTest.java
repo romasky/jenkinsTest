@@ -3,10 +3,7 @@ package testsBySelenium;
 import core.baseSeleniumTest;
 import helpers.assertions;
 import helpers.testValues;
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.abTestPage;
@@ -23,6 +20,7 @@ public class abTestTest extends baseSeleniumTest {
     @Description("This test successfully checks text title")
     @Epic("Positive test")
     @DisplayName("Test positive text title on the page")
+    @Feature("AB")
     @Severity(SeverityLevel.MINOR)
     @Test
     public void testPositiveAbCheckTitleText() {
@@ -37,6 +35,7 @@ public class abTestTest extends baseSeleniumTest {
     @Description("This test successfully checks body text")
     @Epic("Positive test")
     @DisplayName("Test positive text body on the page")
+    @Feature("AB")
     @Severity(SeverityLevel.MINOR)
     @Test
     public void testPositiveAbCheckBodyText()  {

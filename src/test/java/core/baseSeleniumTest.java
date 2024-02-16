@@ -1,6 +1,7 @@
 package core;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
@@ -20,6 +21,7 @@ abstract public class baseSeleniumTest {
     private final Logger logger = LogManager.getLogger(baseSeleniumTest.class);
     protected WebDriverWait wait;
 
+    @Step("Инициализация драйвера")
     @BeforeEach
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -37,7 +39,7 @@ abstract public class baseSeleniumTest {
         logger.info("Driver is initialized");
     }
 
-
+    @Step("Закрытие драйвера")
     @AfterEach
     public void tearDown() {
 

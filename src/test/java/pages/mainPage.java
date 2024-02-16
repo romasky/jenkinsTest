@@ -1,13 +1,12 @@
 package pages;
 
 import core.baseSeleniumPage;
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import readProperties.ConfigProvider;
 
 import java.time.Duration;
@@ -74,7 +73,6 @@ public class mainPage extends baseSeleniumPage implements ConfigProvider { //ext
     public mainPage() {
 
         try {
-            System.out.println("Existing URL before get! is: "+ ConfigProvider.URL);
             driver.get(ConfigProvider.URL);
         }
         catch (InvalidArgumentException e) {
@@ -89,6 +87,15 @@ public class mainPage extends baseSeleniumPage implements ConfigProvider { //ext
 
 
     /*необходимо открыть страницу abTestPage*/
+//    @Step("Поиск репозиториев (value]")
+//    public RepositoriesPage searchForRepositories(String value) {
+//        waitForElement(searchField).sendKeys(value);
+//        waitForElement(searchField).sendKeys(Keys.ENTER);
+//        Allure.addAttachment("Списокрепозиториев", new ByteArrayinputStream(((TakesScreenshot) driver). getScreenshotAs(OutputType.BYTES)));
+//        return new RepositoriesPage(driver);
+//    }
+
+    @Step("Открытие страницы")
     public abTestPage openAbTestPage(){
         abTestPage.click();
         logger.info("A/B Testing page is open");

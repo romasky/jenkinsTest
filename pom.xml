@@ -119,6 +119,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.21</version>
+        </dependency>
+
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -133,7 +139,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-            <aspectj.version>1.9.5</aspectj.version>
+            <aspectj.version>1.9.21</aspectj.version>
         <allure.version>{latest-allure-version}</allure.version>
 
 
@@ -148,8 +154,12 @@
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
+                        <application.properties>/application.properties</application.properties>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                     </argLine>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
                     <properties>
                         <property>
                             <name>listener</name>
@@ -161,7 +171,7 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>1.9.5</version>
+                        <version>1.9.21</version>
                     </dependency>
 
 

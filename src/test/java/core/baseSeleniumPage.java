@@ -1,5 +1,6 @@
 package core;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
 //В этом классе мы присвоили вебдрайвер, который инициализируется в тестовом классе
@@ -7,7 +8,7 @@ abstract public class baseSeleniumPage {
 
     protected static WebDriver driver;
 
-    public static void setDriver(WebDriver webDriver) {
+    public static void setDriver(WebDriver webDriver) {      //Этот метод позволяет установить экземпляр веб-драйвера в статическую переменную driver, что позволяет использовать этот экземпляр в других частях кода без необходимости создавать новый экземпляр каждый раз.
         driver = webDriver;
     }
 }

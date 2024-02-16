@@ -2,6 +2,7 @@ package core;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.manager.SeleniumManager;
@@ -11,6 +12,7 @@ public class baseTestSelenide {
     /**
      * Selenide init
      */
+    @Step("Инициализация Selenide")
     public void setUp() {
 
         SeleniumManager seleniumManager = SeleniumManager.getInstance();
