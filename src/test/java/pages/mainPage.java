@@ -73,7 +73,7 @@ public class mainPage extends baseSeleniumPage implements ConfigProvider { //ext
     public mainPage() {
 
         try {
-            driver.get(ConfigProvider.URL);
+            driver.get("https://the-internet.herokuapp.com");
         }
         catch (InvalidArgumentException e) {
 
